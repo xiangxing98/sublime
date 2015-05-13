@@ -15,6 +15,14 @@ _book
 *.mobi
 *.pdf
 
+# sublime Package
+.DS_Store
+Package\ Control.cache
+Package\ Control.last-run
+Package\ Control.merged-ca-bundle
+Package\ Control.user-ca-bundle
+Package\ Control.system-ca-bundle
+
 # 此为注释 – 将被 Git 忽略.gitignore
 # 忽略所有 .a 结尾的文件
 *.a
