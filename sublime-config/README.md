@@ -7,3 +7,5 @@
 Control](https://packagecontrol.io/installation)，所有我安装的包在 [Package
 Control.sublime-settings 文件](https://github.com/happypeter/sublime-config/blob/master/Package%20Control.sublime-settings)
  中都列出了。
+
+ 此处文件来源于[happypeter](https://github.com/happypeter)
