@@ -1,6 +1,25 @@
 {
+	"color_scheme": "Packages/Nil-Theme/Sanakan.tmTheme",
+	"font_size": 11.0,
+	"hot_exit": false,
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"remember_open_files": true,
+	"scroll_past_end": true,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"ignored_packages":
+	[
+		"PHP",
+		"Vintage"
+	],
+	"update_check": true,
+	"word_wrap": "auto",
+
 	"auto_complete_commit_on_tab": true,
 	"ensure_newline_at_eof_on_save": true,
+
 	"file_exclude_patterns":
 	[
 		".DS_Store",
@@ -14,18 +33,5 @@
 		"tmp/cache",
 		".vagrant"
 	],
-	"font_size": 16,
-	"hot_exit": false,
-	"ignored_packages":
-	[
-		"PHP",
-		"Vintage"
-	],
-	"line_padding_bottom": 7,
-	"line_padding_top": 7,
-	"remember_open_files": false,
-	"scroll_past_end": true,
-	"tab_size": 2,
-	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+
 }
