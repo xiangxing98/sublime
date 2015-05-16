@@ -1,12 +1,36 @@
 {
-	"color_scheme": "Packages/Nil-Theme/Sanakan.tmTheme",
-	"font_size": 11.0,
+	"attr":
+	{
+		"author": "siqin.hou",
+		"email": "xiangxing985529@163.com",
+		"hello": "word",
+		"link": "https://xiangxing98.github.io"
+	},
+
+
+	//"theme":"Soda Light 3.sublime-theme",
+	//"color_scheme": "Packages/Theme - Nil/Big Duo.tmTheme",
+	"color_scheme": "Packages/Nil-Theme/Sanakan.tmTheme",	
+	"font_face": "YaHei Consolas Hybrid",
+	"font_size": 11,
+	"rulers": true, 
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage"
+	],
+	"tab_size": 4,
+	"update_check": true,
+	"word_wrap": "auto",
+
 	"hot_exit": false,
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
 	"remember_open_files": true,
 	"scroll_past_end": true,
-	"tab_size": 2,
+	"tab_size": 4,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"ignored_packages":
@@ -14,8 +38,6 @@
 		"PHP",
 		"Vintage"
 	],
-	"update_check": true,
-	"word_wrap": "auto",
 
 	"auto_complete_commit_on_tab": true,
 	"ensure_newline_at_eof_on_save": true,
