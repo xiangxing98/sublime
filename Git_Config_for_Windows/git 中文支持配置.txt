@@ -1,0 +1,46 @@
+git 中文支持配置
+2014-09-16 22:50:19 下午 由siqin.hou@gmail.com收集
+# 安装完git后，默认对中文支持是有限的，为了支持中文需要做一系列配置,
+# 进入git安装目录，改一下配置就可以基本解决.
+
+1. 打开 Git 环境中的中文支持, 修改 git\etc\gitconfig 中对应的行, 三项
+# --------------------------------------------------------------------------------
+# 代码库统一用utf-8,在git gui中可以正常显示代码中的中文
+# 如果代码文件是gb2312编码，就填gb2312
+[gui]
+	encoding = utf-8
+# log编码，window下默认gb2312,声明后发到服务器才不会乱码.若没有此项存在两个问题，
+# 一、我们推到服务器的中文修订说明会变成乱码；
+# 二、我们从服务器拉下来的别人推上去的中文修订说明也会是乱码。
+# 正常显示推push、拉pull中文修订说明
+[i18n]
+	commitencoding = GB2312
+# 支持中文路径
+[svn]
+	pathnameencoding = GB2312
+
+2. etc\git-completion.bash
+# ls不能显示中文目录, 解决办法：在git/etc/git-completion.bash中增加一行
+# 使得在 Git Bash 中输入 ls 命令，可以正常显示中文文件名, --color=auto 可以删掉。
+alias ls='ls --show-control-chars --color=auto'
+
+3、etc\inputrc
+# git commit不能提交中文注释, 解决办法：修改git/etc/inputrc中对应的行
+# 使得在Git Bash中可以正常输入中文, 比如中文的 commit log
+set output-meta on
+set convert-meta off
+
+4、etc\profile
+# git log无法显示中文注释, 解决办法：在git/etc/profile中增加一行
+# Git Bash中查看日志是能正常显示中文,在末尾添加如下一行
+export LESSCHARSET = iso8859
+# export LESSCHARSET = utf-8
+
+# export LESSCHARSET 说明：
+# $ git log 命令不像其它 vcs 一样，n 条 log 从头滚到底，它会恰当地停在第一页，
+# 按 space 键再往后翻页。这是通过将 log 送给 less 处理实现的。
+# 以上即是设置 less 的字符编码，使得 $ git log 可以正常显示中文。
+# 其实，它的值不一定要设置为 utf-8，比如 latin1, gbk, iso8859也可以……。
+# 还有个办法是 $ git –no-pager log，在选项里禁止分页，则无需设置上面的选项。
+
+
