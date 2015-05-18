@@ -1,6 +1,9 @@
 # Git Learning Notes
 
 ## git config
+Git Resourses
+http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
+http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000
 http://git-scm.com/book/zh/v1
 To check your current username:
 $ git config --global user.name
