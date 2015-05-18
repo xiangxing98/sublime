@@ -1,4 +1,32 @@
 # Git Learning Notes
+
+## git config
+http://git-scm.com/book/zh/v1
+To check your current username:
+$ git config --global user.name
+To set your username:
+$ git config --global user.name "Beatrix Kiddo"
+To check your email:
+$ git config --global user.email
+To set your email:
+$ git config --global user.email beatrix@deadly-vipers.com
+To limit pushes to your current branch:
+$ git config --global push.default simple
+To default all new branches to fetch and rebase - not merge:
+$ git config --global branch.autosetuprebase always
+To record any merge conflict resolutions and reuse them automatically:
+$ git config --global rerere.enabled true
+To colorize git’s output for increased readability:
+$ git config --global color.ui true
+To create a git s alias:
+$ git config --global alias.s "status -s"
+To create a git lg alias:
+$ git config --global alias.lg "log --oneline --decorate --all --graph"
+To configure line endings correctly on Linux/Mac:
+$ git config --global core.autocrlf input
+To configure line endings correctly on Windows:
+$ git config --global core.autocrlf true
+
 ## Git Help
 git
 git help
@@ -34,7 +62,6 @@ The most commonly used git commands are:
 > 'git help -a' and 'git help -g' lists available subcommands and some
 > concept guides. See 'git help <command>' or 'git help <concept>'
 > to read about a specific subcommand or concept.
-
 ## Git Available Commands
 git help -a
 usage: git [--version] [--help] [-C <path>] [-c name=value]
@@ -96,7 +123,6 @@ available git commands in 'E:\Program Files\Git/libexec/git-core'
 'git help -a' and 'git help -g' lists available subcommands and some
 concept guides. See 'git help <command>' or 'git help <concept>'
 to read about a specific subcommand or concept.
-
 ## The Common Git Guides
 git help -g
 The common Git guides are:
@@ -107,11 +133,9 @@ The common Git guides are:
    revisions    Specifying revisions and ranges for Git
    tutorial     A tutorial introduction to Git (for version 1.5.1 or newer)
    workflows    An overview of recommended workflows with Git
-
 'git help -a' and 'git help -g' lists available subcommands and some
 concept guides. See 'git help <command>' or 'git help <concept>'
 to read about a specific subcommand or concept.
-
 ## 1. 远程仓库相关命令
 检出仓库：
 git clone git://github.com/jquery/jquery.git
@@ -133,7 +157,6 @@ git push [remoteName] [localBranchName]
 $git push origin test:master
 // 提交本地test分支作为远程的test分支
 $git push origin test:test
-
 ## 2. 分支(branch)操作相关命令
 查看本地分支：
 git branch
@@ -154,12 +177,10 @@ git push origin [name]
 删除远程分支：
 git push origin :heads/[name] 或 
 gitpush origin :[name] 
-
 *创建空的分支：(执行命令之前记得先提交你当前分支的修改，否则会被强制删干净没得后悔)
 $git symbolic-ref HEAD refs/heads/[name]
 $rm .git/index
 $git clean -fdx
-
 ## 3. 版本(tag)操作相关命令
 查看版本：
 git tag
@@ -179,7 +200,6 @@ git pull origin --tags
 git push origin --tags
 创建带注释的tag：
 git tag -a [name] -m 'yourMessage'
-
 ## 4. 子模块(submodule)相关操作命令
 添加子模块：
 git submodule add [url] [path]
@@ -197,13 +217,11 @@ git rm --cached [path]
 2) 编辑“.gitmodules”文件，将子模块的相关配置节点删除掉
 3) 编辑“ .git/config”文件，将子模块的相关配置节点删除掉
 4) 手动删除子模块残留的目录
-
 ## 5. 忽略一些文件、文件夹不提交
 在仓库根目录下创建名称为“.gitignore”的文件，写入不需要的文件夹名或文件，每个元素占一行即可，如
 target
 bin
 *.db
-
 =====================
 ## Git 常用命令
 git branch 查看本地所有分支
