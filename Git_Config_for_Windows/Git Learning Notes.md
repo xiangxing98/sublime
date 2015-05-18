@@ -158,6 +158,7 @@ $git push origin test:master
 // 提交本地test分支作为远程的test分支
 $git push origin test:test
 ## 2. 分支(branch)操作相关命令
+http://www.juvenxu.com/2010/11/28/a-successful-git-branching-model/
 查看本地分支：
 git branch
 查看远程分支：
