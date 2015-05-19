@@ -1,5 +1,12 @@
 # Git Learning Notes
 
+## people & Resourses
+http://zachholman.com/
+http://higrid.net/hi/docs/free-programming-books
+http://zachholman.com/talk/how-github-uses-github-to-build-github/
+http://gitbeijing.com/
+http://yanxyz.github.io/emmet-docs/
+
 ## git config
 Git Resourses
 http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
