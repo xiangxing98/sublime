@@ -9,8 +9,7 @@ http://msysgit.github.io/
 完成安装之后，就可以使用命令行的 git 工具（已经自带了 ssh 客户端）了，另外还有一个图形界面的 Git 项目管理工具。
 
 ------------------------------------------------------------
-配置
-首先是配置帐号信息
+## 配置-首先是配置帐号信息
 pwd
 cd /o/sublime
 git config --global user.name xiangxing98
@@ -19,17 +18,17 @@ git config --list#查看配置的信息
 git help config#获取帮助信息
 
 ------------------------------------------------------------
-配置自动换行（自动转换坑太大）
+## 配置自动换行（自动转换坑太大）
 git config --global core.autocrlf input #提交到git是自动将换行符转换为lf
 
 ------------------------------------------------------------
-配置密钥
+## 配置密钥
 ssh-keygen -t rsa -C xiangxing985529@163.com #生成密钥
 ssh -T git@github.com #测试是否成功
 
 
 ------------------------------------------------------------
-新建仓库create a new repository on the command line
+## 新建仓库create a new repository on the command line
 echo # R-Programming >> README.md
 git init#初始化
 git status#获取状态
@@ -43,7 +42,7 @@ git remote add origin https://github.com/xiangxing98/R-Programming.git
 git push -u origin master#push同事设置默认跟踪分支
 
 ------------------------------------------------------------
-从现有仓库克隆
+## 从现有仓库克隆
 git clone git://github.com/yanhaijing/data.js.git
 #克隆到自定义文件夹
 git clone git://github.com/schacon/grit.git mypro 
@@ -51,7 +50,7 @@ git clone https://github.com/xiangxing98/learn_git.git
 git pull https://github.com/xiangxing98/sublime.git
 
 ------------------------------------------------------------
-本地
+## 本地
 git add *#跟踪新文件
 rm *&git rm *#移除文件
 git rm -f *#移除文件
@@ -68,7 +67,7 @@ git checkout branch|tag|commit -- file_name#从仓库取出file覆盖当前分支
 git checkout -- .#从暂存区去除文件覆盖工作区
 
 ------------------------------------------------------------
-分支branch
+## 分支branch
 git branch#列出本地分支
 git branch -r#列出远端分支
 git branch -a#列出所有分支
@@ -85,7 +84,7 @@ git merge test#将test分支合并到当前分支
 git rebase master#将master分之上超前的提交，变基到当前分支
 
 ------------------------------------------------------------
-远端remote
+## 远端remote
 # push an existing repository from the command line
 git remote add origin https://github.com/xiangxing98/R-Programming.git
 git push -u origin master
@@ -97,10 +96,8 @@ git push originname localbranch:serverbranch#推送到远端上指定分支
 git checkout -b test origin/dev#基于远端dev新建test分支
 git push origin :server#删除远端分支
 
-
-
 ------------------------------------------------------------
-源remote
+## 源remote
 git是一个分布式代码管理工具，所以可以支持多个仓库，在git里，服务器上的仓库在本地称之为remote。
 个人开发时，多源用的可能不多，但多源其实非常有用。
 git remote add origin1 git@github.com:yanhaijing/data.js.git
@@ -111,7 +108,7 @@ git remote rm origin1#删除
 git remote show origin1#查看指定源的全部信息
 
 ------------------------------------------------------------
-标签tag
+## 标签tag
 当开发到一定阶段时，给程序打标签是非常棒的功能。
 git tag#列出现有标签  
 git tag v0.1#新建标签
@@ -122,7 +119,9 @@ git push origin --tags#一次性推送所有分支
 git tag -d v0.1#删除标签
 git push origin :refs/tags/v0.1#删除远程标签
 ------------------------------------------------------------
-总结
+
+
+## 总结
 啊哈！终于总结完了，以后不会的时候，再也不用到处去找了。
 其实还有两个最有用的命令还未提到。
 git help *#获取命令的帮助信息
