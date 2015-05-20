@@ -81,7 +81,6 @@ he list of known hosts.
 Permission denied (publickey).
 #这个时候可以在控制台上测试一下
 ssh -T git@github.com
-$ ssh -T git@github.com
 #Warning: Permanently added the RSA host key for IP address '192.30.252.131' to 
 #the list of known hosts.
 #Hi xiangxing98! You've successfully authenticated, but GitHub does not provide 
