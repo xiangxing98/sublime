@@ -26,6 +26,8 @@ git config --global credential.helper store
 ## 2.方法二
 ### 2.1 添加环境变量
 在windows中添加一个HOME环境变量，变量名:HOME,变量值：%USERPROFILE%
+%USERPROFILE% XP下的路径一般为： C:\Documents and Settings\Administrator
+在Bash下的路径： /c/Documents\ and\ Settings//Administrator/
 ### 2.2 创建git用户名和密码存储文件
 进入%HOME%目录，新建一个名为"_netrc"的文件，
 cd /c/Documents\ and\ Settings//Administrator/
