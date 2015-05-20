@@ -187,7 +187,7 @@ git merge [name] ----将名称为[name]的分支与当前分支合并
 git push origin [name]
 删除远程分支：
 git push origin :heads/[name] 或 
-gitpush origin :[name] 
+git push origin :[name] 
 *创建空的分支：(执行命令之前记得先提交你当前分支的修改，否则会被强制删干净没得后悔)
 $git symbolic-ref HEAD refs/heads/[name]
 $rm .git/index
