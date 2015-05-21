@@ -35,6 +35,8 @@ ssh-agent bash
 exit
 
 #接着拷贝.ssh/id_rsa.pub文件内的所以内容，将它粘帖到github帐号管理中的添加SSH key界面中。
+#Linux Copy command
+cat ~/.ssh/id_rsa.pub | pbcopy
 #1. 登录github
 #2. 点击右上方的Accounting settings图标
 #3. 选择 SSH key
@@ -161,3 +163,4 @@ learnGitBranching
 [3]	ISBN：9787111349679, 由机械工业出版社华章公司于2011年7月出版。
 [4]	http://book.git-scm.com/
 [5]	http://progit.org/book/
+[6] https://gist.github.com/
