@@ -49,6 +49,7 @@ git config --global color.ui true
 git config --global alias.s "status -s"
 #To create a git lg alias, use git lg to show log
 git config --global alias.lg "log --oneline --decorate --all --graph"
+git config --global alias.plog "log --pretty=fuller"
 
 #配置自动换行-自动转换坑太大,提交到git是自动将换行符转换为lf
 #To configure line endings correctly on Linux/Mac:
@@ -139,6 +140,7 @@ git rm -f *#移除文件
 git rm --cached *#取消跟踪
 git mv file_from file_to#重命名跟踪文件
 git log#查看提交记录
+git log --pretty=fuller
 git commit#提交更新
 git commit -m 'message'
 git commit -a#跳过使用暂存区域，把所有已经跟踪过的文件暂存起来一并提交
