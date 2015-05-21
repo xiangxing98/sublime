@@ -129,6 +129,7 @@ git clone git://github.com/xiangxing98/sublime.git mypro
 git clone https://github.com/xiangxing98/learn_git.git
 #拉取最新的远程版本
 git pull https://github.com/xiangxing98/sublime.git
+git pull origin gh-pages
 
 --------------------------------------------------------------------------------
 ## 0. Work On Local Repository 本地操作
@@ -154,7 +155,7 @@ git checkout -- .#从暂存区去除文件覆盖工作区
 # push an existing repository from the command line
 #1st Band the remote using ssh protocol-recommended
 git remote add origin git@github.com:xiangxing98/R-Programming.git
-git remote add origin git@github.com:xiangxing/sublime.git
+git remote add origin git@github.com:xiangxing98/sublime.git
 #https protocol
 git remote add origin https://github.com/xiangxing98/R-Programming.git
 #2nd push and set default track branch
