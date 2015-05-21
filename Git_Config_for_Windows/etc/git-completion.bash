@@ -2679,4 +2679,4 @@ if [ Cygwin = "$(uname -o 2>/dev/null)" ]; then
 __git_complete git.exe __git_main
 fi
 
-alias ls='ls --show-control-chars'
+alias ls='ls --show-control-chars --color=auto'

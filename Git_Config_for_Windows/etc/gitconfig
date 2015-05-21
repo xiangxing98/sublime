@@ -20,8 +20,8 @@
 [rebase]
 	autosquash = true
 [gui]
-	encoding = GB2312
-[i18n]
-	commitencoding = GB2312
+	encoding = utf-8
 [svn]
 	pathnameencoding = GB2312
+[i18n]
+	commitencoding = GB2312
