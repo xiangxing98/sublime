@@ -41,3 +41,7 @@ password your-password
 
 
 .gitignore的路径是相对repo本身的.
+
+## not safe this way
+[1] 实际上使用HTTP协议也可以免口令输入。即通过文件~/.netrc写入HTTP认证的明文口令。
+具体文件格式参见ftp命令MAN手册中相关介绍。

@@ -143,7 +143,9 @@ git push origin :refs/tags/v0.1#删除远程标签
 其实还有两个最有用的命令还未提到。
 git help *#获取命令的帮助信息
 git status#获取当前的状态，非常有用，因为git会提示接下来的能做的事情
-参考资料
+
+
+## 参考资料
 Git参考手册
 Git简明手册
 Git Magic
@@ -152,3 +154,10 @@ Pro Git
 图解Git
 git-简明指南
 learnGitBranching
+
+## 参考网站
+[1]	http://git-scm.com/
+[2]	https://github.com/
+[3]	ISBN：9787111349679, 由机械工业出版社华章公司于2011年7月出版。
+[4]	http://book.git-scm.com/
+[5]	http://progit.org/book/
