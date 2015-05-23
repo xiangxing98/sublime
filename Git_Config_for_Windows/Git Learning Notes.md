@@ -226,6 +226,22 @@ $rm .git/index
 $git clean -fdx
 #http://www.juvenxu.com/2010/11/28/a-successful-git-branching-model/
 
+# Merging Branch via command line
+#If you do not want to use the merge button or an automatic merge cannot be performed, 
+#you can perform a manual merge on the command line.
+`git://github.com/xiangxing98/sublime.git`
+#Step 1: From your project repository, bring in the changes and test.
+```bash
+git fetch origin
+git checkout -b TestBranch origin/TestBranch
+git merge master
+```
+#Step 2: Merge the changes and update on GitHub.
+```bash
+git checkout master
+git merge --no-ff TestBranch
+git push origin master
+```
 
 ## 3. 版本标签(tag)操作相关命令
 #当开发到一定阶段时，给程序打标签是非常棒的功能。
