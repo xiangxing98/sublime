@@ -1,5 +1,7 @@
 # working-with-ssh-key-passphrases.md
+
 # Working with SSH key passphrases
+[working-with-ssh-key-passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/)
 This article will walk you through the process of securing your SSH keys and configuring an authentication agent so that you won't have to re-enter your passphrase every time you use your keys.
 
 ## Why do I need a passphrase?
