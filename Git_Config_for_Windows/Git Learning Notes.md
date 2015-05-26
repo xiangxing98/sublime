@@ -41,6 +41,17 @@ git config --global user.email xiangxing985529@163.com
 git config --list
 #获取config帮助信息
 git help config 
+cd /o/sublime/.git/config
+#modify use ssh 
+[remote "origin"]
+	url = https://github.com/xiangxing98/sublime.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+to
+[remote "origin"]
+	url = git@github.com:xiangxing98/sublime.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+
+
 
 #编辑器配置
 #To colorize git’s output for increased readability:
