@@ -73,6 +73,55 @@ git config --global branch.autosetuprebase always
 git config --global rerere.enabled true
 
 --------------------------------------------------------------------------------
+Windows下修改Git bash的HOME路径
+Windows中使用http://git-scm.com/安装Git bash工具，默认的HOME和~路径一般都是C:\Users\用户名，每次得用命令切换到常用的Repository下，此操作重复而没有意义。更重要的是，若使用SSH连接GitHub，其配置文件比如rsa也保存在C盘中，不利于备份。因此，本文的目的是修改Git bash默认的Home路径。
+E:\Program Files\Git\etc
+打开Git安装位置\etc\profile文件，找到
+# normalize HOME to unix path
+HOME="$(cd "$HOME" ; pwd)"
+export PATH="$HOME/bin:$PATH" 
+增加两行，修改后结果如下：
+# normalize HOME to unix path
+HOME="你想要修改的HOME路径"
+HOME="$(cd "$HOME" ; pwd)"
+cd
+export PATH="$HOME/bin:$PATH"
+
+再次启动Git bash，就会自动进入新修改后的HOME路径了，之后新配置的.SSH文件夹也为在新路径中。
+
+
+Updated on 2013/11/13
+
+若是Windows系统，为了方便起见可以顺手加上一个变量名用于自定义项目目录，此做法不但便于路径跳转，也可以在启动git时自动进入项目目录。方法极为简单，只需在profile文件中加入:
+
+# set Project Path proj="你的项目文件目录" cd $proj 
+如代码所「言」，可使用cd $proj命令即可跳转到项目目录，也可以按需定义其他变量。
+
+如果您对bush非常了解，应该能猜到linux的bash的配置方案理应也在这行得通。而事实也的确如此，有profile就有bashrc。
+
+在HOME目录下新建文件.bashrc写入你最惯用的配置，比如alias、bind、export 等，执行source ~/.bashrc即刻生效。
+
+参考文献
+Portable Git for Windows: setting the $HOME environment variable to allow complete portability (including SSL keys and configuration for use with GitHub)
+
+
+Syntax
+~ Expand to the variable $HOME or home directory of the current user
+~USER Expand to the home directory of the given username
+
+## Logging into a oracle user, whose home directory is /home/oracle
+# su oracle
+[tmp]$ pwd
+/tmp
+
+[tmp]$ echo $HOME
+/home/oracle
+
+[tmp]$ cd ~
+
+[~]$ pwd
+/home/oracle
+
 ## 配置密钥
 #C:\Documents and Settings\Administrator\.ssh\
 cd ~/.ssh
