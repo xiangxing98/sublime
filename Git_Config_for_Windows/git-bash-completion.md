@@ -26,6 +26,7 @@ source ~/.git-completion.bash
 ## 4. 编辑~/.bashrc，加入source ~/.git-completion.bash
 cd ~/
 vi ~/.bashrc
+#gedit ~/.bashrc
 #在文件的最后加入下面内容
 source ~/.git-completion.bash
 
