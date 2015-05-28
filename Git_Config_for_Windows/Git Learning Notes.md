@@ -54,7 +54,41 @@ to
 ```
 
 
-#编辑器配置
+# 编辑器配置
+```
+#git tab completion
+#01.Download or copy git-completion.bash
+#cd /home/siqin/Documents/sublime/Git_Config_for_Windows/
+#cd /tmp
+wget https://github.com/markgandolfo/git-bash-completion/blob/master/git-completion.bash
+git clone https://github.com/git/git
+
+cp git-completion.bash ~/.git-completion.bash
+
+#Copy to /etc/bash_completion.d/
+#或者cd /usr/share/doc/git-1.7.1/
+#cd git/contrib/completion/
+#cp contrib/completion/git-completion.bash /etc/bash_completion.d/
+
+#put at user home directory
+#cp git-completion.bash ~/.git-completion.bash
+#cp git/contrib/completion/git-completion.bash ~/.git-completion.bash
+cp git-completion.bash /etc/bash_completion.d/git-completion.bash
+
+#Make it effective加载文件
+source /etc/bash_completion.d/git-completion.bash
+
+#编辑~/.bashrc，加入source ~/.git-completion.bash
+cd ~/
+vi ~/.bashrc
+#在文件的最后加入下面内容
+source ~/.git-completion.bash
+
+#完成以上步骤后，重启shell，今后输入git命令时，就可以通过tab键自动补全命令了
+
+
+```
+
 ```
 #To colorize git’s output for increased readability:
 git config --global color.ui true
@@ -65,7 +99,7 @@ git config --global alias.lg "log --oneline --decorate --all --graph"
 git config --global alias.plog "log --pretty=fuller"
 ```
 
-#配置自动换行-自动转换坑太大,提交到git是自动将换行符转换为lf
+# 配置自动换行-自动转换坑太大,提交到git是自动将换行符转换为lf
 ```
 #To configure line endings correctly on Linux/Mac:
 git config --global core.autocrlf input
