@@ -31,6 +31,7 @@ http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a0
 
 --------------------------------------------------------------------------------
 ## 配置-首先是配置帐号信息-git config 
+```
 pwd #查看present working directory
 cd /o/ #take care Windows XP directory in Git is different
 mkdir sublime #make project directory and change directory to that dir
@@ -50,10 +51,11 @@ to
 [remote "origin"]
 	url = git@github.com:xiangxing98/sublime.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
-
+```
 
 
 #编辑器配置
+```
 #To colorize git’s output for increased readability:
 git config --global color.ui true
 #To create a git s alias, can use git s to show status
@@ -61,13 +63,17 @@ git config --global alias.s "status -s"
 #To create a git lg alias, use git lg to show log
 git config --global alias.lg "log --oneline --decorate --all --graph"
 git config --global alias.plog "log --pretty=fuller"
+```
 
 #配置自动换行-自动转换坑太大,提交到git是自动将换行符转换为lf
+```
 #To configure line endings correctly on Linux/Mac:
 git config --global core.autocrlf input
 #To configure line endings correctly on Windows:
 git config --global core.autocrlf true
+```
 
+```
 #To check your current username:
 git config --global user.name
 #To set your username:
@@ -82,10 +88,12 @@ git config --global push.default simple
 git config --global branch.autosetuprebase always
 #To record any merge conflict resolutions and reuse them automatically:
 git config --global rerere.enabled true
+```
 
 --------------------------------------------------------------------------------
 Windows下修改Git bash的HOME路径
 Windows中使用http://git-scm.com/安装Git bash工具，默认的HOME和~路径一般都是C:\Users\用户名，每次得用命令切换到常用的Repository下，此操作重复而没有意义。更重要的是，若使用SSH连接GitHub，其配置文件比如rsa也保存在C盘中，不利于备份。因此，本文的目的是修改Git bash默认的Home路径。
+```
 E:\Program Files\Git\etc
 打开Git安装位置\etc\profile文件，找到
 # normalize HOME to unix path
@@ -97,7 +105,7 @@ HOME="你想要修改的HOME路径"
 HOME="$(cd "$HOME" ; pwd)"
 cd
 export PATH="$HOME/bin:$PATH"
-
+```
 再次启动Git bash，就会自动进入新修改后的HOME路径了，之后新配置的.SSH文件夹也为在新路径中。
 
 
@@ -115,7 +123,7 @@ Updated on 2013/11/13
 参考文献
 Portable Git for Windows: setting the $HOME environment variable to allow complete portability (including SSL keys and configuration for use with GitHub)
 
-
+```
 Syntax
 ~ Expand to the variable $HOME or home directory of the current user
 ~USER Expand to the home directory of the given username
@@ -132,8 +140,10 @@ Syntax
 
 [~]$ pwd
 /home/oracle
+```
 
 ## 配置密钥
+```
 #C:\Documents and Settings\Administrator\.ssh\
 cd ~/.ssh
 ssh-keygen -t rsa -C xiangxing985529@163.com #生成密钥
@@ -154,9 +164,10 @@ cat ~/.ssh/id_rsa.pub | pbcopy
 ssh -T git@github.com 
 #Hi xiangxing98! You've successfully authenticated, but GitHub does not provide 
 #shell access.
-
+```
 --------------------------------------------------------------------------------
 ## Create a new repository from scratch on the command line-GIT Bash Windows XP
+```
 cd /E/Github/
 mkdir WebApp
 cd WebApp
@@ -180,30 +191,35 @@ git remote add origin git@github.com:xiangxing98/sublime.git #添加远程源ssh
 git remote add origin https://github.com/xiangxing98/sublime.git #https protocol
 #git remote add origin https://github.com/xiangxing98/R-Programming.git
 git push -u origin master #push同时设置默认跟踪分支
+```
 
 # Git中从远程的分支获取最新的版本到本地有这样2个命令
+```
 1. git fetch：相当于是从远程获取最新版本到本地，不会自动merge
 git fetch origin master #首先从远程的origin的master主分支下载最新的版本到origin/master分支上
 git log -p master..origin/master #然后比较本地的master分支和origin/master分支的差别
 git merge origin/master #最后进行合并
-
+```
 上述过程其实可以用以下更清晰的方式来进行：
+```
 git fetch origin master:tmp
 git diff tmp 
 git merge tmp
+```
 从远程获取最新的版本到本地的test分支上
 之后再进行比较合并
 
 2. git pull：相当于是从远程获取最新版本并merge到本地
-git pull origin master
+`git pull origin master`
 上述命令其实相当于git fetch 和 git merge
 在实际使用中，git fetch更安全一些
 因为在merge前，我们可以查看更新情况，然后再决定是否合并
 
 --------------------------------------------------------------------------------
 # Clone a repository from Github 从现有仓库克隆
+```
 git clone git://github.com/yanhaijing/data.js.git
-git clone git@github.com:xiangxing98/sublime.git
+git clone git@github.com:xiangxing98/sublime.git`
 #克隆到自定义文件夹
 git clone git://github.com/xiangxing98/sublime.git mypro 
 git clone https://github.com/xiangxing98/learn_git.git
@@ -211,9 +227,10 @@ git clone https://github.com/xiangxing98/learn_git.git
 git pull https://github.com/xiangxing98/sublime.git
 git pull origin master
 git pull origin gh-pages
-
+```
 --------------------------------------------------------------------------------
 ## 0. Work On Local Repository 本地操作
+```
 git add *#跟踪新文件
 rm *&git rm *#移除文件
 git rm -f *#移除文件
@@ -229,9 +246,11 @@ git reset HEAD *#取消已经暂存的文件
 git checkout -- file#取消对文件的修改（从暂存区去除file）
 git checkout branch|tag|commit -- file_name#从仓库取出file覆盖当前分支
 git checkout -- .#从暂存区去除文件覆盖工作区
+```
 
 --------------------------------------------------------------------------------
 ## 1. 远程仓库相关命令-远端，源remote
+```
 #git是一个分布式代码管理工具，可以支持多个仓库.服务器上的仓库在本地称为remote。
 #个人开发时，多源用的可能不多，但多源其实非常有用。
 # push an existing repository from the command line
@@ -242,8 +261,10 @@ git remote add origin git@github.com:xiangxing98/sublime.git
 git remote add origin https://github.com/xiangxing98/R-Programming.git
 #2nd push and set default track branch
 git push -u origin master
+```
 
 #检出仓库：
+```
 git clone git://github.com/jquery/jquery.git
 #查看远程仓库源remote：
 git remote #显示全部远程仓库源
@@ -267,8 +288,10 @@ git push [remoteName] [localBranchName]
 git push origin test:master
 #// 提交本地test分支作为远程的test分支
 git push origin test:test
+```
 
 ## 2. 分支(branch)操作相关命令
+```
 ## 分支branch
 git branch #查看,列出本地分支
 git branch -r #列出远端分支
@@ -305,6 +328,7 @@ $git symbolic-ref HEAD refs/heads/[name]
 $rm .git/index
 $git clean -fdx
 #http://www.juvenxu.com/2010/11/28/a-successful-git-branching-model/
+```
 
 # Merging Branch via command line
 #If you do not want to use the merge button or an automatic merge cannot be performed, 
@@ -324,6 +348,7 @@ git push origin master
 ```
 
 ## 3. 版本标签(tag)操作相关命令
+```
 #当开发到一定阶段时，给程序打标签是非常棒的功能。
 #查看创建版本
 git tag #列出现有标签,查看版本
@@ -339,26 +364,30 @@ git pull origin --tags #合并远程仓库的tag到本地
 #删除版本
 git tag -d v0.1#删除版本,删除标签git tag -d [name]
 git push origin :refs/tags/v0.1#删除远程标签版本 git push origin :refs/tags/[name]
+```
 
 ## 4. 子模块(submodule)相关操作命令
 #添加子模块：
-git submodule add [url] [path]
+`git submodule add [url] [path]`
 #如：
-git submodule add git://github.com/soberh/ui-libs.git src/main/webapp/ui-libs
+`git submodule add git://github.com/soberh/ui-libs.git src/main/webapp/ui-libs`
 #初始化子模块,只在首次检出仓库时运行一次就行
-git submodule init
+`git submodule init`
 #更新子模块, 每次更新或切换分支后都需要运行一下
-git submodule update
+`git submodule update`
 #删除子模块,分4步走
+```
 #1) 
 git rm --cached [path]
 #2) 编辑“.gitmodules”文件，将子模块的相关配置节点删除掉
 #3) 编辑“ .git/config”文件，将子模块的相关配置节点删除掉
 #4) 手动删除子模块残留的目录
+```
 
 ## 5. 忽略一些文件、文件夹不提交
 #在仓库根目录下创建名称为“.gitignore”的文件，
 #写入不需要的文件夹名或文件，每个元素占一行即可，如
+```
 touch .gitignore
 #Change New Line -e, >> out put to .gitignore
 echo -e "target\nbin\n*.db" >> .gitignore
@@ -366,11 +395,12 @@ cat .gitignore
 target
 bin
 *.db
-
+```
 
 
 =====================
 ## Git 常用命令
+```
 git branch 查看本地所有分支
 git status 查看当前状态
 git commit 提交
@@ -410,31 +440,31 @@ git diff --cached 或
 git diff --staged 查看尚未提交的更新
 git stash push 将文件给push到一个临时空间中
 git stash pop 将文件从临时空间pop下来
+```
+
 ---------------------------------------------------------
-git remote add origin git@github.com:username/Hello-World.git
-git push origin master 将本地项目给提交到服务器中
+`git remote add origin git@github.com:username/Hello-World.git`
+`git push origin master `将本地项目给提交到服务器中
 -----------------------------------------------------------
-git pull 本地与服务器端同步
+`git pull` 本地与服务器端同步
 -----------------------------------------------------------------
-git push (远程仓库名) (分支名) 将本地分支推送到服务器上去。
-git push origin serverfix:awesomebranch
+`git push` (远程仓库名) (分支名) 将本地分支推送到服务器上去。
+`git push origin serverfix:awesomebranch`
 ------------------------------------------------------------------
+```
 git fetch 相当于是从远程获取最新版本到本地，不会自动merge
 git commit -a -m "log_message" (-a是提交所有改动，-m是加入log信息) 本地修改同步至服务器端 ：
 git branch branch_0.1 master 从主分支master创建branch_0.1分支
 git branch -m branch_0.1 branch_1.0 将branch_0.1重命名为branch_1.0
 git checkout branch_1.0/master 切换到branch_1.0/master分支
 du -hs
+```
 -----------------------------------------------------------
-
-
-
-
-
 
 
 --------------------------------------------------------------------------------
 ## Git Help, Commands and Guides
+```
 git
 git help
 git help -a
@@ -530,8 +560,10 @@ gc                  rebase              write-tree
 'git help -a' and 'git help -g' lists available subcommands and some
 concept guides. See 'git help <command>' or 'git help <concept>'
 to read about a specific subcommand or concept.
+```
 
 ## The Common Git Guides
+```
 git help -g
 The common Git guides are:
 attributes   Defining attributes per path
@@ -541,9 +573,11 @@ modules      Defining submodule properties
 revisions    Specifying revisions and ranges for Git
 tutorial     A tutorial introduction to Git (for version 1.5.1 or newer)
 workflows    An overview of recommended workflows with Git
+```
 'git help -a' and 'git help -g' lists available subcommands and some
 concept guides. See 'git help <command>' or 'git help <concept>'
 to read about a specific subcommand or concept.
-#Show HTML Git guides
-git help ignore
+
+#  Show HTML Git guides
+`git help ignore`
 Launching default browser to display HTML ...
