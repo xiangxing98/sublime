@@ -19,3 +19,13 @@ git diff
 git commit -m "add portable git"
 git push -u origin master 
 exit
+git add .
+git commit -m "modify"
+git push -u origin master 
+git add .
+git commit -m "modify"
+git push -u origin master 
+git add .
+git commit -m "add articles/generating-ssh-keys/"
+git push -u origin master 
+exit
