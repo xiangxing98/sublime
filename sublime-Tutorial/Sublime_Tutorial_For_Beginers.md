@@ -10,15 +10,11 @@
 
 <!-- /MarkdownTOC -->
 
-
-
 时间 2015-05-28 23:13:44 黯羽轻扬
 
 原文:[sublime指南](http://ayqy.net/blog/sublime指南/)
 
 主题 Sublime Text
-
-
 
 ## 写在前面
 
@@ -39,8 +35,6 @@ Sublime最吸引人的地方可能是 Ctrl + p 提供的超便捷的功能，输
 放弃npp最大的原因是npp的前端插件不够用，很多插件都早就不更新了，而Sublime的前端插件本来就很多，而且正在变得越来越多
 
 P.S.不用担心Sublime收费的问题，据说可以永久试用，只是偶尔会弹个提示框出来。当然，还有一种东西叫做注册码。。
-
-
 
 ## 二.安装Sublime
 
@@ -73,8 +67,6 @@ E1D0AE85 A0BBD039 0E9C8D55 E1B89D5D
 B98FC99C 8FAC73EE D2B95564 DF450523
 
 ------ END LICENSE ------
-
-
 
 ## 三.常用快捷键
 
@@ -178,8 +170,6 @@ Ctrl+Enter 光标后插入行
 
 Ctrl+Shift+Enter 光标前插入行
 
-
-
 ## 四.好用的插件
 
 1.Sublime Package Control
@@ -217,8 +207,6 @@ zenCoding升级版
 使用方法：快捷键 ctrl+alt+F
 
 有了上面这6个插件应该是很不错了
-
-
 
 ## 参考资料
 
