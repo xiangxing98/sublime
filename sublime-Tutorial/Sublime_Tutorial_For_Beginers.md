@@ -17,6 +17,10 @@
 
 主题 Sublime Text
 
+[zhihu sublime topic](http://www.zhihu.com/question/19976788)
+
+[zhihu sublime topic](http://www.zhihu.com/topic/19668076)
+
 ## 写在前面
 
 之前一直在用notepad++，感觉也还不错。后来发现身边的人比自己写代码速度快很多，有点不服，就去找插件了，打算找个更好的代码补全插件，以提高效率。找来找去的结果就是卸载了npp，改用sublime。。
