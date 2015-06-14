@@ -1,10 +1,17 @@
 # About_Git_Rebase.md
+<!-- MarkdownTOC -->
+
+- git rebase introduction
+- 那么rebase都做了什么事情呢？
+
+<!-- /MarkdownTOC -->
 
 git show
 git reflog show | grep add
 git reflog show | grep commit
 git reflog show | grep pull
 git reflog show | grep 
+
 
 git for-each-ref --sort=authordate \--format="%(*authordate:iso8601) %(objectname:short) %(refname:short)" \refs/tags/git reflog show | grep pull
 
@@ -46,7 +53,7 @@ $ git rebase master topic
 $ git rebase master
 ```
 
-### 那么rebase都做了什么事情呢？
+## 那么rebase都做了什么事情呢？
 
 首先，git会对topic分支和 <upstream> 做一个差集，把不同的commit找出来，类似于执行`git log <upstream>..HEAD` ，对于以上例子来说结果就是 A---B---C ，然后把这些commit存在一个临时的地方。
 
