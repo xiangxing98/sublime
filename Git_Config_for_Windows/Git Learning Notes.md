@@ -119,7 +119,7 @@ git config --global user.email
 git config --global user.email xiangxing985529@163.com
 #To limit pushes to your current branch:
 git config --global push.default simple
-#To default all new branches to fetch and rebase - not merge:
+#To default all new branches to fetch and P - not merge:
 git config --global branch.autosetuprebase always
 #To record any merge conflict resolutions and reuse them automatically:
 git config --global rerere.enabled true
