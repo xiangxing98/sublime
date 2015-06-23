@@ -5,4 +5,5 @@ README.md
 thanks michaelliao
 https://github.com/michaelliao/learn-python3
 
-## 
+## learnpythonthehardway
+http://learnpythonthehardway.org/
