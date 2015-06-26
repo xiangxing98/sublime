@@ -87,4 +87,119 @@ setup中的scripts表示将该文件放到 Python的Scripts目录下，可以直
 easy_install -m 包名，可以卸载软件包，但是卸载后还要手动删除遗留文件。
 setuptools它可以自动的安装模块，只需要你提供给它一个模块名字就可以，并且自动帮你解决模块的依赖问题。一般情况下用setuptools给安装的模块会自动放到一个后缀是.egg的目录里。
 
+## windows install easy_install
+```
+cd /d E:\GitHub\sublime\python
+python ez_setup.py
+```
+ok
+>Installed d:\program files\python3\lib\site-packages\setuptools-18.0.1-py3.4.egg
+>Processing dependencies for setuptools==18.0.1
+>Finished processing dependencies for setuptools==18.0.12
+
+有了setuptools，我们就要开始配置环境。因为你需要用到python安装目录下的Scripts文件夹里面的文件
 在Windows里，easy_install这个命令在python安装目录下的scripts里面，所以需要把scripts加到环境变量的PATH里，这样用起来就更方便，linux下不需要注意这个问题。
+"D:\Program Files\Python3\"
+
+系统环境变量Path
+先在最后加一个分号;
+然后再输入 “你的python路径”\Scripts
+比如我的python安装路径是D:\Program Files\Python3\
+那么我应该输入D:\Program Files\Python3\Scripts
+
+设置完毕之后，就可以直接用命令行安装模块了。
+比如我要安装PIL模块，只需要输入easy_install PIL
+回车
+
+issues still exists
+easy_install web.py
+ImportError: No module named 'utils'
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\easy_install-kaocolsk\web.py-0.37\
+
+Python 实战（0）：初识 web.py
+
+2015-03-29 Crossin的编程教室 Crossin的编程教室
+在 Python 系列的基础课程结束之后，很长一段时间我不知道该写点什么。再加上工作很忙，也没法很系统地写一些教程文章。于是之前东拉西扯说过不少方面的东西，也分享过一些别人的文章。但我始终还是觉得该写点什么，虽然更新的频率不会很高。
+
+有些初学 Python 的同学表示能不能提供一些实例，结合基础知识的学习。也有不少已经完成基础内容学习的同学询问，如何可以进一步提高编程能力。鉴于此，我想接下来的一段时间，做一个比较长的系列：这个系列会以一个项目为主线，过程中大概不会专门针对某一个内容去讲，基本是写到哪讲到哪，比较随意。目前对这个项目的初步设定是一个关于电影的网站，会涉及到网站搭建、爬虫、数据处理、数据库等内容，也会稍为涉及一点HTML相关的内容。
+
+以这样的方式来做，对于初学编程的人，可以对软件开发这件事情有个更直观的认识，不再局限于用代码解题这种层面；对于已经有一定的编程基础人，我希望能抛砖引玉，给大家一点启发。你们可以在我这个虚拟项目的基础上，添加自己喜欢的功能，也可以仿照这个流程另起炉灶，做一些自己设计的项目。对于我自己来说，也可以更好地分享一些编程中的经验，而不是再和网上可以搜到的众多教程一样反复炒冷饭。
+
+目前想法：如果进展顺利，会把项目放在 Github 上维护，同时也会在互联网上放置一个可运行的版本供人使(wei)用(guan)。这都是后话了。
+
+那么今天先开个场：既然要做一个跟网站相关的项目，少不了要选择一个基于 Python 的 web 开发框架。这次我打算选择 web.py。我本人对 django 的经验比较多，web.py 并没有用过。不过都说 web.py 很简单，那么用来玩一玩也无妨。同时，也算是对 Aaron Swartz 致以我个人的敬意。
+
+安装 web.py
+
+web.py 有几种下载方式，通常用 easy_install 会比较方便一点。关于 easy_install 的使用网上可以很容易搜到，这里不再赘述。安装 easy_install 后，Linux 和 Mac 下都可以通过命令
+
+sudo easy_install web.py
+
+完成安装。Windows 下应该不用 sudo，手边没有 Win 系统无法验证，见谅。
+
+或者也可以通过 pip 安装、下载或 clone 安装包等方式进行安装。
+
+在你的 Python 命令行下输入
+
+import web
+
+无任何报错说明已安装成功。
+
+运行你的第一个网站
+
+在一个你找得到的地方新建一个叫做 code.py 的文件，然后输入敲入以下代码并保存：
+
+import web
+
+urls = (
+
+'/', 'index'
+
+)
+
+class index:
+
+def GET(self):
+
+return "Hello, world!"
+
+if __name__ == "__main__":
+
+app = web.application(urls, globals())
+
+app.run()
+
+具体这些代码的含义今天先不解释，保证不要输错就好。
+
+从命令行进入 code.py 所在的目录，运行：
+
+python code.py
+
+不出意外的话，应该会看到输出：
+
+http://0.0.0.0:8080/
+
+用浏览器打开这个地址，就可以看到一个只写着 Hello, world! 的页面。不过有些浏览器（比如我的 Chrome）会不认 0.0.0.0 这个地址而进行搜索。如果遇到这种情况，可以在运行时指定地址为 127.0.0.1，即：
+
+python code.py 127.0.0.1
+
+然后访问 http://127.0.0.1:8080/ 就 OK 了。
+
+也许这就是你人生第一个网站吧，想想是不是还有点小激动呢。前方的路还很长，欲速则不达，且行且珍惜。
+
+如果你按捺不住想要了解更多，可以先去 webpy.org 瞅瞅。上面的新手引导有中文版本。
+
+#==== Crossin的编程教室 ====#
+
+微信ID：crossincode
+
+论坛：http://crossin.me
+
+QQ群：241080058
+
+
+
+感谢UPYUN对本微信的支持。UPYUN是国内领先的云服务提供商，专注于为开发者提供静态文件的云存储、云处理和CDN加速服务。现在注册www.upyun.com，即可免费体验！
+
+« Older Article Python 实战（1）：在网页上显示信息
+Newer Article » 【python课程】编程中的一个实用函数
