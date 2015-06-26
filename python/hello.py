@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 #cd /d E:\GitHub\sublime\python
 #hello
-print("hellp python")
+print("Hellp Python, hello World.")
