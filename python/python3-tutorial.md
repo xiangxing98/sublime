@@ -1,5 +1,6 @@
 # python3-tutorial.md
-> http://www.w3cschool.cc/python3/python3-tutorial.html
+> [w3cschool python3 tutorial](http://www.w3cschool.cc/python3/python3-tutorial.html)
+> [python tutorial](http://docs.python.org/3.4/tutorial/)
 > 
 ```python
 # -*- coding: cp-1252 -*-
@@ -40,3 +41,5 @@ python最具特色的就是使用缩进来表示代码块。缩进的空格数�
 >>> 2 ** 5 # 乘方
 32
 
+easy_install web.py
+ImportError: No module named 'utils'
